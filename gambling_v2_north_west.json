@@ -1,0 +1,87 @@
+[
+  {
+    "region":"North West",
+    "year":2010,
+    "sites":1505
+  },
+  {
+    "region":"North West",
+    "year":2011,
+    "sites":1510
+  },
+  {
+    "region":"North West",
+    "year":2012,
+    "sites":1485
+  },
+  {
+    "region":"North West",
+    "year":2013,
+    "sites":1465
+  },
+  {
+    "region":"North West",
+    "year":2014,
+    "sites":1475
+  },
+  {
+    "region":"North West",
+    "year":2015,
+    "sites":1470
+  },
+  {
+    "region":"North West",
+    "year":2016,
+    "sites":1455
+  },
+  {
+    "region":"North West",
+    "year":2017,
+    "sites":1455
+  },
+  {
+    "region":"North West",
+    "year":2018,
+    "sites":1445
+  },
+  {
+    "region":"North West",
+    "year":2019,
+    "sites":1385
+  },
+  {
+    "region":"North West",
+    "year":2020,
+    "sites":1375
+  },
+  {
+    "region":"North West",
+    "year":2021,
+    "sites":1155
+  },
+  {
+    "region":"North West",
+    "year":2022,
+    "sites":1145
+  },
+  {
+    "region":"North West",
+    "year":2023,
+    "sites":1150
+  },
+  {
+    "region":"North West",
+    "year":2024,
+    "sites":1105
+  },
+  {
+    "region":"North West",
+    "year":2025,
+    "sites":1100
+  },
+  {
+    "region":"North West",
+    "year":2026,
+    "sites":1025
+  }
+]
