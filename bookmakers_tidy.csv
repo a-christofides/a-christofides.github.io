@@ -1,0 +1,125 @@
+region_key,bookmaker_key,bookmaker,paid_only,type
+us,betonlineag,BetOnline.ag,False,Sportsbook
+us,betmgm,BetMGM,False,Sportsbook
+us,betrivers,BetRivers,False,Sportsbook
+us,betus,BetUS,False,Sportsbook
+us,bovada,Bovada,False,Sportsbook
+us,williamhill_us,Caesars,True,Sportsbook
+us,draftkings,DraftKings,False,Sportsbook
+us,fanatics,Fanatics,True,Sportsbook
+us,fanduel,FanDuel,False,Sportsbook
+us,lowvig,LowVig.ag,False,Sportsbook
+us,mybookieag,MyBookie.ag,False,Sportsbook
+us2,ballybet,Bally Bet,False,Sportsbook
+us2,betanysports,BetAnything,False,Sportsbook
+us2,betparx,betPARX,False,Sportsbook
+us2,courtside,Courtside,True,Sportsbook
+us2,espnbet,theScore Bet,False,Sportsbook
+us2,fliff,Fliff,False,Sportsbook
+us2,hardrockbet,Hard Rock Bet,False,Sportsbook
+us2,hardrockbet_az,Hard Rock Bet (AZ),False,Sportsbook
+us2,hardrockbet_fl,Hard Rock Bet (FL),False,Sportsbook
+us2,hardrockbet_oh,Hard Rock Bet (OH),False,Sportsbook
+us2,rebet,ReBet,True,Sportsbook
+us_dfs,dabble_us_dfs,Dabble,False,DFS site
+us_dfs,pick6,DraftKings Pick6,False,DFS site
+us_dfs,prizepicks,PrizePicks,False,DFS site
+us_dfs,underdog,Underdog Fantasy,False,DFS site
+us_ex,betopenly,BetOpenly,False,Exchange
+us_ex,kalshi,Kalshi,False,Exchange
+us_ex,limitless,Limitless Exchange,False,Exchange
+us_ex,novig,Novig,False,Exchange
+us_ex,polymarket,Polymarket,False,Exchange
+us_ex,polymarket_us,Polymarket (US),False,Exchange
+us_ex,prophetx,ProphetX,False,Exchange
+uk,sport888,888sport,False,Sportsbook
+uk,betano_uk,Betano (UK),False,Sportsbook
+uk,betfair_ex_uk,Betfair Exchange,False,Sportsbook
+uk,betfair_sb_uk,Betfair Sportsbook,False,Sportsbook
+uk,betfred_uk,Betfred (UK),False,Sportsbook
+uk,betvictor,Bet Victor,False,Sportsbook
+uk,betway,Betway,False,Sportsbook
+uk,boylesports,BoyleSports,False,Sportsbook
+uk,casumo,Casumo,False,Sportsbook
+uk,coral,Coral,False,Sportsbook
+uk,grosvenor,Grosvenor,False,Sportsbook
+uk,ladbrokes_uk,Ladbrokes,False,Sportsbook
+uk,leovegas,LeoVegas,False,Sportsbook
+uk,livescorebet,LiveScore Bet,False,Sportsbook
+uk,matchbook,Matchbook,False,Sportsbook
+uk,paddypower,Paddy Power,False,Sportsbook
+uk,skybet,Sky Bet,False,Sportsbook
+uk,smarkets,Smarkets,False,Sportsbook
+uk,unibet_uk,Unibet,False,Sportsbook
+uk,virginbet,Virgin Bet,False,Sportsbook
+uk,williamhill,William Hill (UK),False,Sportsbook
+eu,onexbet,1xBet,False,Sportsbook
+eu,sport888,888sport,False,Sportsbook
+eu,betclic_fr,Betclic (FR),False,Sportsbook
+eu,betanysports,BetAnySports,False,Sportsbook
+eu,betfair_ex_eu,Betfair Exchange,False,Sportsbook
+eu,betonlineag,BetOnline.ag,False,Sportsbook
+eu,betsson,Betsson,False,Sportsbook
+eu,codere_it,Codere (IT),False,Sportsbook
+eu,betvictor,Bet Victor,False,Sportsbook
+eu,coolbet,Coolbet,False,Sportsbook
+eu,everygame,Everygame,False,Sportsbook
+eu,gtbets,GTbets,False,Sportsbook
+eu,leovegas_se,LeoVegas (SE),False,Sportsbook
+eu,marathonbet,Marathon Bet,False,Sportsbook
+eu,matchbook,Matchbook,False,Sportsbook
+eu,mybookieag,MyBookie.ag,False,Sportsbook
+eu,nordicbet,NordicBet,False,Sportsbook
+eu,pinnacle,Pinnacle,False,Sportsbook
+eu,pmu_fr,PMU (FR),False,Sportsbook
+eu,tipico_de,Tipico (DE),False,Sportsbook
+eu,unibet_fr,Unibet (FR),False,Sportsbook
+eu,unibet_it,Unibet (IT),False,Sportsbook
+eu,unibet_nl,Unibet (NL),False,Sportsbook
+eu,unibet_se,Unibet (SE),False,Sportsbook
+eu,williamhill,William Hill,False,Sportsbook
+eu,winamax_de,Winamax (DE),False,Sportsbook
+eu,winamax_fr,Winamax (FR),False,Sportsbook
+au,betfair_ex_au,Betfair Exchange,False,Sportsbook
+au,betr_au,Betr,False,Sportsbook
+au,betright,Bet Right,False,Sportsbook
+au,bet365_au,Bet365 AU,True,Sportsbook
+au,dabble_au,Dabble AU,True,Sportsbook
+au,ladbrokes_au,Ladbrokes,False,Sportsbook
+au,neds,Neds,False,Sportsbook
+au,picklebet_au,Picklebet (AU),False,Sportsbook
+au,playup,PlayUp,False,Sportsbook
+au,pointsbetau,PointsBet (AU),False,Sportsbook
+au,sportsbet,SportsBet,False,Sportsbook
+au,tab,TAB,False,Sportsbook
+au,tabtouch,TABtouch,False,Sportsbook
+au,unibet,Unibet,False,Sportsbook
+ca,bet99_ca_on,BET99 (CA - ON),True,Sportsbook
+ca,betano_ca_on,Betano (CA - ON),False,Sportsbook
+ca,betmgm_ca_on,BetMGM (CA - ON),False,Sportsbook
+ca,betrivers_ca_on,BetRivers (CA - ON),False,Sportsbook
+ca,playnow_ca,PlayNow (CA),False,Sportsbook
+ca,pointsbetca,PointsBet (CA - ON),False,Sportsbook
+ca,proline_ca_on,PROLINE (CA - ON),False,Sportsbook
+ca,sportsinteraction_ca_on,Sports Interaction (CA - ON),False,Sportsbook
+fr,betclic_fr,Betclic (FR),False,Sportsbook
+fr,netbet_fr,NetBet (FR),False,Sportsbook
+fr,pmu_fr,PMU (FR),False,Sportsbook
+fr,unibet_fr,Unibet (FR),False,Sportsbook
+fr,winamax_fr,Winamax (FR),False,Sportsbook
+se,atg_se,ATG (SE),False,Sportsbook
+se,betinia_se,Betinia (SE),False,Sportsbook
+se,betmgm_se,BetMGM (SE),False,Sportsbook
+se,betsson,Betsson,False,Sportsbook
+se,campobet_se,CampoBet (SE),False,Sportsbook
+se,expekt_se,Nya Expekt (SE),False,Sportsbook
+se,hajper_se,Hajper (SE),False,Sportsbook
+se,leovegas_se,LeoVegas (SE),False,Sportsbook
+se,mrgreen_se,Mr Green (SE),False,Sportsbook
+se,nordicbet,NordicBet,False,Sportsbook
+se,sport888_se,888sport (SE),False,Sportsbook
+se,svenskaspel_se,Svenska Spel,False,Sportsbook
+se,unibet_se,Unibet (SE),False,Sportsbook
+fi,leovegas_fi,LeoVegas (FI),False,Sportsbook
+fi,unibet_fi,Unibet (FI),False,Sportsbook
+fi,veikkaus_fi,Veikkaus (FI),False,Sportsbook
