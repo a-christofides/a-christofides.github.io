@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Example2.css">
+    <title>UK Devolution Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="big" style="margin-bottom: 0px;">UK Devolution Dashboard</h1>
+    <p style="margin-top: 0px; color: darkblue">Annaïs Christofides | <a href="Example2.html">Back to my portfolio</a></p>
+
+    <h3 class="small">
+        Gambling and betting sites across six UK regions, 2010 to 2026
+    </h3>
+
+    <p>
+        Scotland, Wales and Northern Ireland have their own devolved governments, and London has its own mayor and assembly. Each chart shows how many sites in the gambling and betting industry operated in that region each year. Note that each chart has its own scale, because the regions differ a lot in size.
+    </p>
+
+    <!-- The six charts are placed in this grid by the loop below -->
+    <div id="dashboard" class="dashboard-grid"></div>
+
+    <script>
+        // Address of the folder on GitHub that holds the six raw JSON files (must end with a slash)
+        const rawBase = "https://raw.githubusercontent.com/a-christofides/a-christofides.github.io/refs/heads/main";
+
+        const regions = ["Scotland", "Wales", "Northern Ireland", "London", "North West", "North East"];
+        const grid = document.getElementById("dashboard");
+
+        // One loop, and the embed function is written once inside it
+        for (const region of regions) {
+            const box = document.createElement("div");
+            grid.appendChild(box);
+
+            const file = "gambling_v2_" + region.toLowerCase().replaceAll(" ", "_") + ".json";
+
+            const spec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "width": 280,
+                "height": 200,
+                "title": region,
+                "data": { "url": rawBase + file },
+                "mark": { "type": "line", "point": true, "color": "#c2185b", "strokeWidth": 2.5 },
+                "encoding": {
+                    "x": { "field": "year", "type": "quantitative", "title": "Year", "axis": { "format": "d" } },
+                    "y": { "field": "sites", "type": "quantitative", "title": "Gambling sites" },
+                    "tooltip": [
+                        { "field": "year", "type": "quantitative", "title": "Year", "format": "d" },
+                        { "field": "sites", "type": "quantitative", "title": "Sites" }
+                    ]
+                }
+            };
+
+            vegaEmbed(box, spec);
+        }
+    </script>
+
+    <p><a href="https://colab.research.google.com/drive/1FfonzEKn2G2QdAfhthf683Ei33LqtaSG?usp=sharing" target="_blank">Open the Google Colab notebook</a></p>
+
+    <p>
+        Source: Office for National Statistics, UK Business Counts (local units), SIC 92000 Gambling and betting activities, accessed via Nomis, March of each year. These count sites, not betting activity or spending.
+    </p>
+</body>
+
+</html>
+
+
+
+
