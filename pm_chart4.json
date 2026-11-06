@@ -1,0 +1,179 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "pew_volume.csv"},
+  "title": {
+    "text": [
+      "Prediction market volume hit $53B in July,",
+      "up from under $1B two years earlier"
+    ],
+    "subtitle": [
+      "Combined monthly trading volume on Kalshi and Polymarket,",
+      "billions of U.S. dollars, July 2024 to July 2026"
+    ],
+    "anchor": "start",
+    "offset": 14,
+    "lineHeight": 30,
+    "subtitleLineHeight": 22,
+    "font": "Helvetica Neue, Arial, sans-serif",
+    "fontSize": 25,
+    "fontWeight": "bold",
+    "color": "#2A2A2A",
+    "subtitleFont": "Helvetica Neue, Arial, sans-serif",
+    "subtitleFontSize": 15,
+    "subtitleColor": "#555555",
+    "subtitlePadding": 8
+  },
+  "width": 480,
+  "height": 300,
+  "config": {"view": {"stroke": null}},
+  "layer": [
+    {
+      "mark": {"type": "area", "color": "#C0325C", "opacity": 0.08},
+      "encoding": {
+        "x": {"field": "month", "type": "temporal", "scale": {"type": "utc"}},
+        "y": {"field": "volume_billions", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#C0325C",
+        "strokeWidth": 3.5,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "temporal",
+          "title": null,
+          "scale": {"type": "utc"},
+          "axis": {
+            "format": "%b ’%y",
+            "tickCount": {"interval": "month", "step": 6},
+            "labelFontSize": 14,
+            "labelColor": "#2A2A2A",
+            "domainColor": "#999999",
+            "tickColor": "#999999",
+            "grid": false,
+            "labelPadding": 8,
+            "labelOverlap": false
+          }
+        },
+        "y": {
+          "field": "volume_billions",
+          "type": "quantitative",
+          "title": null,
+          "scale": {"domain": [0, 60], "nice": false},
+          "axis": {
+            "values": [0, 10, 20, 30, 40, 50, 60],
+            "labelExpr": "'$' + datum.value + 'B'",
+            "labelFontSize": 14,
+            "labelColor": "#2A2A2A",
+            "domain": false,
+            "ticks": false,
+            "grid": true,
+            "gridColor": "#E3E3E3",
+            "labelPadding": 8
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"month": "2024-07-01", "volume": 0.8},
+          {"month": "2026-07-01", "volume": 53}
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "#C0325C",
+        "size": 70,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {"field": "month", "type": "temporal", "scale": {"type": "utc"}},
+        "y": {"field": "volume", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"month": "2026-07-01", "volume": 53, "label": "$53.0B"}]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "dy": 4,
+        "fontWeight": "bold",
+        "fontSize": 14,
+        "color": "#C0325C"
+      },
+      "encoding": {
+        "x": {"field": "month", "type": "temporal", "scale": {"type": "utc"}},
+        "y": {"field": "volume", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"month": "2024-07-01", "volume": 0.8, "label": "$0.8B"}]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 0,
+        "dy": -30,
+        "fontWeight": "bold",
+        "fontSize": 14,
+        "color": "#C0325C"
+      },
+      "encoding": {
+        "x": {"field": "month", "type": "temporal", "scale": {"type": "utc"}},
+        "y": {"field": "volume", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"month": "2024-10-15", "volume": 4.6, "label": "US election"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "dy": -14,
+        "fontSize": 13,
+        "color": "#555555"
+      },
+      "encoding": {
+        "x": {"field": "month", "type": "temporal", "scale": {"type": "utc"}},
+        "y": {"field": "volume", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"month": "2026-06-01", "volume": 47.7, "label": "World Cup"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "dy": -4,
+        "fontSize": 13,
+        "color": "#555555"
+      },
+      "encoding": {
+        "x": {"field": "month", "type": "temporal", "scale": {"type": "utc"}},
+        "y": {"field": "volume", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ]
+}

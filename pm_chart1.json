@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Longshot win rates compared with the 35% ceiling implied by prices",
+  "title": {
+    "text": "Unlikely military bets won 52% of the time",
+    "subtitle": [
+      "Bets priced at a 35% chance or less should win at most 35% of the time.",
+      "Bars show the actual win rate minus 35. Grey zone: in line with prices."
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitleColor": "black",
+    "anchor": "start",
+    "color": "black"
+  },
+  "background": "white",
+  "view": {"stroke": "transparent"},
+  "width": 250,
+  "height": 220,
+  "data": {"url": "cc3_pm_longshot.csv"},
+  "layer": [
+    {
+      "data": {"values": [{"y1": -35, "y2": 0}]},
+      "mark": {"type": "rect", "color": "rgb(198,198,198)", "opacity": 0.3},
+      "encoding": {
+        "x": {"field": "y1", "type": "quantitative", "scale": {"domain": [-40, 20]}},
+        "x2": {"field": "y2"}
+      }
+    },
+    {
+      "transform": [{"calculate": "datum.win_rate - 35", "as": "diff"}],
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "field": "topic",
+          "type": "nominal",
+          "sort": ["Military and defense", "All political markets", "Politician speech", "Elections", "All markets"],
+          "axis": {"ticks": false, "labelPadding": 5, "title": null}
+        },
+        "x": {
+          "field": "diff",
+          "type": "quantitative",
+          "scale": {"domain": [-40, 20]},
+          "axis": {
+            "title": "Win rate vs the 35% ceiling, percentage points",
+            "ticks": false,
+            "labelPadding": 5,
+            "values": [-40, -30, -20, -10, 0, 10, 20],
+            "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value",
+            "gridColor": {"expr": "datum.value == 0 ? 'black' : '#d3d3d3'"}
+          }
+        },
+        "color": {
+          "condition": [
+            {"test": "datum.diff > 0", "value": "#C0325C"},
+            {"test": "datum.diff <= 0", "value": "rgb(198,198,198)"}
+          ],
+          "field": "diff",
+          "type": "quantitative",
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "topic", "title": "Topic"},
+          {"field": "win_rate", "title": "Win rate, %"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"calculate": "datum.win_rate - 35", "as": "diff"},
+        {"calculate": "datum.win_rate + '%'", "as": "label"},
+        {"filter": "datum.diff > 0"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 4},
+      "encoding": {
+        "y": {
+          "field": "topic",
+          "type": "nominal",
+          "sort": ["Military and defense", "All political markets", "Politician speech", "Elections", "All markets"]
+        },
+        "x": {"field": "diff", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [
+        {"calculate": "datum.win_rate - 35", "as": "diff"},
+        {"calculate": "datum.win_rate + '%'", "as": "label"},
+        {"filter": "datum.diff <= 0"}
+      ],
+      "mark": {"type": "text", "align": "right", "dx": -4},
+      "encoding": {
+        "y": {
+          "field": "topic",
+          "type": "nominal",
+          "sort": ["Military and defense", "All political markets", "Politician speech", "Elections", "All markets"]
+        },
+        "x": {"field": "diff", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ]
+}

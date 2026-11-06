@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Near-perfect wallets compared with election markets",
+  "title": {
+    "text": "Near-perfect bettors rise with insider risk",
+    "subtitle": [
+      "Share of betting accounts that won 90-100% of their longshot bets,",
+      "vs election markets (11%). Darker pink = more insider risk."
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitleColor": "black",
+    "anchor": "start",
+    "color": "black"
+  },
+  "background": "white",
+  "view": {"stroke": "transparent"},
+  "width": 250,
+  "height": 200,
+  "data": {"url": "cc3_pm_wallets.csv"},
+  "layer": [
+    {
+      "transform": [{"calculate": "datum.near_perfect_wallets_pct - 11", "as": "diff"}],
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "field": "outcome_maker",
+          "type": "nominal",
+          "sort": ["Public (elections)", "Individual (speeches)", "Group (military, central banks)"],
+          "axis": {"ticks": false, "labelPadding": 5, "title": null, "labelLimit": 260}
+        },
+        "x": {
+          "field": "diff",
+          "type": "quantitative",
+          "scale": {"domain": [-1, 10]},
+          "axis": {
+            "title": "Percentage points above election markets",
+            "ticks": false,
+            "labelPadding": 5,
+            "values": [0, 2, 4, 6, 8, 10],
+            "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value",
+            "gridColor": {"expr": "datum.value == 0 ? 'black' : '#d3d3d3'"}
+          }
+        },
+        "color": {
+          "condition": [
+            {"test": "datum.diff == 0", "value": "rgb(198,198,198)"},
+            {"test": "datum.diff > 0 && datum.diff < 5", "value": "#E48AA5"},
+            {"test": "datum.diff >= 5", "value": "#C0325C"}
+          ],
+          "field": "diff",
+          "type": "quantitative",
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "outcome_maker", "title": "Who decides the outcome"},
+          {"field": "near_perfect_wallets_pct", "title": "% of wallets"},
+          {"field": "insider_risk", "title": "Insider risk"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"calculate": "datum.near_perfect_wallets_pct - 11", "as": "diff"},
+        {"filter": "datum.diff == 0"}
+      ],
+      "mark": {"type": "point", "filled": true, "color": "rgb(198,198,198)", "size": 130, "opacity": 1},
+      "encoding": {
+        "y": {
+          "field": "outcome_maker",
+          "type": "nominal",
+          "sort": ["Public (elections)", "Individual (speeches)", "Group (military, central banks)"]
+        },
+        "x": {"field": "diff", "type": "quantitative"},
+        "tooltip": [
+          {"field": "outcome_maker", "title": "Who decides the outcome"},
+          {"field": "near_perfect_wallets_pct", "title": "% of wallets"},
+          {"field": "insider_risk", "title": "Insider risk"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"calculate": "datum.near_perfect_wallets_pct - 11", "as": "diff"},
+        {"calculate": "datum.diff == 0 ? datum.near_perfect_wallets_pct + '% (baseline)' : datum.near_perfect_wallets_pct + '%'", "as": "label"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 9},
+      "encoding": {
+        "y": {
+          "field": "outcome_maker",
+          "type": "nominal",
+          "sort": ["Public (elections)", "Individual (speeches)", "Group (military, central banks)"]
+        },
+        "x": {"field": "diff", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ]
+}

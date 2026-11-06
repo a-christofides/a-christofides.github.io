@@ -1,0 +1,135 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "pew_volume.csv"
+  },
+  "title": {
+    "text": [
+      "Trading volume on prediction markets",
+      "doubled between May and July"
+    ],
+    "subtitle": [
+      "Combined monthly global trading volume on",
+      "Kalshi and Polymarket, in U.S. dollars"
+    ],
+    "anchor": "start",
+    "offset": 14,
+    "lineHeight": 30,
+    "subtitleLineHeight": 22,
+    "font": "Helvetica Neue, Arial, sans-serif",
+    "fontSize": 25,
+    "fontWeight": "bold",
+    "color": "#2A2A2A",
+    "subtitleFont": "Georgia, serif",
+    "subtitleFontSize": 17,
+    "subtitleFontStyle": "italic",
+    "subtitleColor": "#565656",
+    "subtitlePadding": 8
+  },
+  "width": 400,
+  "height": 280,
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#DFA246",
+        "strokeWidth": 5,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "temporal",
+          "title": null,
+          "scale": {
+            "type": "utc"
+          },
+          "axis": {
+            "format": "%b ’%y",
+            "tickCount": {
+              "interval": "month",
+              "step": 6
+            },
+            "labelFont": "Helvetica Neue, Arial, sans-serif",
+            "labelFontSize": 15,
+            "labelColor": "#2A2A2A",
+            "domainColor": "#999999",
+            "tickColor": "#999999",
+            "grid": false,
+            "labelPadding": 8,
+            "labelOverlap": false
+          }
+        },
+        "y": {
+          "field": "volume_billions",
+          "type": "quantitative",
+          "title": null,
+          "scale": {
+            "domain": [
+              0,
+              55
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            "labelExpr": "'$' + datum.value + 'B'",
+            "labelFont": "Helvetica Neue, Arial, sans-serif",
+            "labelFontSize": 15,
+            "labelColor": "#2A2A2A",
+            "domain": false,
+            "ticks": false,
+            "grid": true,
+            "gridDash": [
+              1,
+              4
+            ],
+            "gridColor": "#999999",
+            "gridWidth": 1,
+            "labelPadding": 8
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.highlight == 'Yes'"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "fill": "white",
+        "stroke": "#DFA246",
+        "strokeWidth": 1.5,
+        "size": 110,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "temporal",
+          "scale": {
+            "type": "utc"
+          }
+        },
+        "y": {
+          "field": "volume_billions",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}
