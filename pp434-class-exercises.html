@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>PP434: Class Exercises</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+</head>
+
+<body>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pp434-class-exercises.html" class="active">PP434: Class Exercises</a>
+        <a href="DevolutionDashboard.html">Devolution Dashboard</a>
+        <a href="Annais_Christofides_Resume_2026_LDN.pdf" target="_blank">Resume</a>
+    </nav>
+
+    <h1 class="big">PP434: Class Exercises</h1>
+    <p class="byline">Annaïs Christofides | <a href="https://www.linkedin.com/in/annaïs">LinkedIn</a></p>
+    <h3 class="small">
+        Charts made in PP434: Automated Data Visualization, one section for each coding challenge.
+    </h3>
+
+    <!-- ===================== CC1 ===================== -->
+    <section>
+        <div class="chart-description">
+            <h2>CC1. Hosting | A chart from the library</h2>
+            <p>
+                A chart from Richard Davies's chart library, embedded in my own site with vegaEmbed.
+            </p>
+        </div>
+
+        <figure id="cc1_chart1"></figure>
+
+        <script>
+            let cc1_chart1_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/library/chartLine1.json";
+            vegaEmbed('#cc1_chart1', cc1_chart1_spec)
+        </script>
+    </section>
+
+    <!-- ===================== CC2 ===================== -->
+    <section>
+        <div class="chart-description">
+            <h2>CC2. Building | My own charts on unemployment</h2>
+        </div>
+
+        <figure id="cc2_chart1"></figure>
+
+        <script>
+            let cc2_chart1_spec = "figure_3.json";
+            vegaEmbed('#cc2_chart1', cc2_chart1_spec)
+        </script>
+
+        <div class="chart-description">
+            <p>
+                As someone who is in the process of looking for a job, I decided to play around with USA unemployment data.
+            </p>
+        </div>
+
+        <figure id="cc2_chart2"></figure>
+
+        <script>
+            let cc2_chart2_spec = "figure_4.json";
+            vegaEmbed('#cc2_chart2', cc2_chart2_spec)
+        </script>
+
+        <div class="chart-description">
+            <p>
+                Played around with Germany employment data, looking at a brief comparison between the two countries. It is important to note that the data collection varies between the two, ie Germany unemployment rate is unclear whether it encompasses all ages or only 16+.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== CC3 ===================== -->
+    <section>
+        <div class="chart-description">
+            <h2>CC3. Policy debate | Betting on military action</h2>
+            <p>
+                Should US regulators ban prediction-market bets on military and government actions? Evidence suggests longshot bets on military markets win more often than prices imply.
+            </p>
+        </div>
+
+        <div class="chart-row">
+            <figure id="cc3_chart1"></figure>
+            <figure id="cc3_chart2"></figure>
+        </div>
+
+        <script>
+            let cc3_chart1_spec = "pm_chart1.json";
+            let cc3_chart2_spec = "pm_chart2.json";
+
+            vegaEmbed('#cc3_chart1', cc3_chart1_spec)
+            vegaEmbed('#cc3_chart2', cc3_chart2_spec)
+        </script>
+
+        <div class="chart-description">
+            <p>
+                In military markets, large longshot bets won 52% against an implied maximum of 35%, and near-perfect accounts were likelier where insiders could know.
+            </p>
+
+            <p>
+                A longshot here is a large bet of $2,500 or more at a price of 35 cents or less, so prices imply it should win no more than about 35% of the time, yet in military markets these bets won 51.8% (ACDC, 2026, pp. 11, 15). However, this is not proof of insider trading, as the report notes that chance or mispricing could also explain it, and that an account with one lucky longshot also has a perfect record (ACDC, 2026, pp. 11, 16, 20). Even so, if some traders are acting on non-public information, this raises questions about fairness to ordinary bettors and about whether these markets should face restrictions (ACDC, 2026, pp. 10, 33).
+            </p>
+
+            <p>
+                A next step would be to find data linking heavier Polymarket betting to higher political polarization, although I have not found any that tests this yet.
+            </p>
+
+            <p>
+                Source: Anti-Corruption Data Collective (ACDC) (2026) Insider Risks in Polymarket Political Markets. Policy brief, April 2026, by Michelle Kendler-Kretsch and David Szakonyi. Covers all settled Polymarket markets, January 2021 to March 2026. Available at: <a href="https://acdatacollective.org/wp-content/uploads/2026/04/Insider_Risks_in_Polymarket_Political_Markets_ACDC.pdf">acdatacollective.org</a> (accessed 21 October 2026).
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== CC4 ===================== -->
+    <section>
+        <div class="chart-description">
+            <h2>CC4. Replication</h2>
+            <p>
+                On the left is the original chart from Pew Research Center. On the right is my Vega-Lite replica. Below it is my improved version.
+            </p>
+        </div>
+
+        <div class="chart-row">
+            <figure>
+                <img src="pew_original.png" width="360" alt="Original Pew Research Center line chart of monthly prediction market trading volume, July 2024 to July 2026">
+            </figure>
+            <figure id="cc4_replica"></figure>
+        </div>
+
+        <figure id="cc4_improved"></figure>
+
+        <script>
+            let cc4_replica_spec = "pm_chart3.json";
+            let cc4_improved_spec = "pm_chart4.json";
+
+            vegaEmbed('#cc4_replica', cc4_replica_spec)
+            vegaEmbed('#cc4_improved', cc4_improved_spec)
+        </script>
+
+        <div class="chart-description">
+            <p>
+                Changing the original graph, I focused on adding some clearer labels to denote the specific spikes that could contribute to increased gambling (such as the US election and the World Cup), the start, and end.
+                Further, I added 0 on the y-axis to better show the scaling of cashflow between markets. I also think the shading gives a better visual to the volume of cashflow, but it may be too much.
+            </p>
+            <p>
+                Source: Pew Research Center analysis of data from The Block, accessed September 2026. Spike labels are my own annotations, based on reporting by Pew and The Block.
+            </p>
+        </div>
+    </section>
+
+        <!-- ===================== CC5 ===================== -->
+    <section>
+        <h2>CC5. Accessing data | API and Scraper</h2>
+
+        <h3>API task: World Bank bribery data</h3>
+        <div id="api_chart"></div>
+
+        <script>
+        var apiSpec = {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "width": 500,
+          "height": 360,
+          "title": "Bribery incidence among firms (% of firms)",
+
+          // The data comes live from the World Bank API.
+          // "property": "1" means "use the second part of the reply", which is the data itself.
+          "data": {
+            "url": "https://api.worldbank.org/v2/country/mex;bra;ind;nga;zaf;col;per;idn;ken;arg;tur;phl/indicator/IC.FRM.BRIB.ZS?format=json&per_page=1000&mrnev=1",
+            "format": { "type": "json", "property": "1" }
+          },
+
+          "mark": { "type": "bar", "color": "#a3174f" },
+
+          // Which column goes on which axis
+          // "country.value" means: the "value" inside the "country" box
+          "encoding": {
+            "y": { "field": "country.value", "type": "nominal", "sort": "-x", "title": null },
+            "x": { "field": "value", "type": "quantitative", "title": "% of firms" },
+            "tooltip": [
+              { "field": "country.value", "type": "nominal", "title": "Country" },
+              { "field": "date", "type": "nominal", "title": "Survey year" },
+              { "field": "value", "type": "quantitative", "title": "% of firms", "format": ".1f" }
+            ]
+          }
+        };
+        vegaEmbed("#api_chart", apiSpec);
+        </script>
+
+        <p><strong>How the API works.</strong> The base URL is https://api.worldbank.org/v2, where v2 is the current version of the API. After it come the countries (/country/ followed by codes separated by semicolons, such as mex;bra;ind for Mexico, Brazil and India, etc), the indicator code (/indicator/IC.FRM.BRIB.ZS, the share of firms asked to pay a bribe), and the options after a question mark: format=json for JSON, per_page=1000 for up to 1,000 rows, and mrnev=1 for each country's most recent non-empty value. The full URL below has twelve countries.</p>
+        <p><strong>What comes back.</strong> A JSON list with two parts, [metadata, data]. The data is nearly tidy, with one row per country in its latest survey year, but the country name is nested inside each row. In the chart, "property" tells Vega to read the data part, and country.value reaches the name.</p>
+        <p><strong>Full URL used in the chart:</strong><br>
+
+        <code>https://api.worldbank.org/v2/country/mex;bra;ind;nga;zaf;col;per;idn;ken;arg;tur;phl/indicator/IC.FRM.BRIB.ZS?format=json&amp;per_page=1000&amp;mrnev=1</code></p>
+
+        <h3>Scraper task: who offers betting odds, by region</h3>
+
+        <!-- COLAB LINK IS HERE -->
+        <p><a href="https://colab.research.google.com/drive/1vMrQgCAIvVRP2WWhx6xuNtRlxa0iEo-K?usp=sharing" target="_blank">Open the Google Colab notebook</a></p>
+
+        <div id="scraper_chart"></div>
+
+        <script>
+        var scraperSpec = {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "width": 450,
+          "height": 350,
+          "title": "Bookmakers listed by The Odds API, by region",
+
+          // The data is the CSV file made in my Colab notebook
+          "data": { "url": "https://raw.githubusercontent.com/a-christofides/a-christofides.github.io/refs/heads/main/bookmakers_tidy_v2.csv" },
+
+          "mark": "bar",
+
+          "encoding": {
+            // Each bar is one region (region_name was made in the notebook)
+            "y": { "field": "region_name", "type": "nominal", "sort": "-x", "title": "Regions", "axis": { "labelLimit": 300 } },
+            // Bar length = how many rows (companies) each region has
+            "x": { "aggregate": "count", "type": "quantitative", "title": "Number of bookmakers listed" },
+            // Colour of each bar shows the type of company
+            "color": {
+              "field": "type",
+              "type": "nominal",
+              "title": "Type of company",
+              "scale": {
+                "domain": ["Sportsbook", "DFS site", "Exchange"],
+                "range": ["#a3174f", "#e07aa3", "#3d0d26"]
+              }
+            }
+          }
+        };
+        vegaEmbed("#scraper_chart", scraperSpec);
+        </script>
+
+        <p>Scraped bookmaker tables from The Odds API using BeautifulSoup. Challenge: "opens new window" text was stuck to every name, so I stripped it out.</p>
+
+        <p><strong>What is a bookmaker?</strong> A bookmaker is a company that sets odds on an outcome and takes bets on it. Sportsbooks take the other side of each bet, while exchanges match bettors against each other and charge a fee. The Odds API calls all of these bookmakers, so I use the same word here, and each row counts one company listed in one region.</p>
+
+        <p><strong>Why this matters for my research.</strong> My research asks whether regulators should restrict prediction markets. In this data, exchanges like Kalshi and Polymarket sit in the same list as ordinary sportsbooks, which shows how blurred the line between betting and prediction markets has become. However, exchanges are a small share of the listings, and this is one company's coverage, so it cannot show the size of the whole market.</p>
+    </section>
+
+    <!-- ===================== CC6 ===================== -->
+    <section>
+        <div class="chart-description">
+            <h2>CC6. Loops | Gambling across UK regions</h2>
+            <p>
+                My devolution dashboard has six charts on its own page, showing how many gambling and betting sites operated in six UK regions between 2010 and 2026.
+            </p>
+            <p>
+                <a href="DevolutionDashboard.html">Open the UK devolution dashboard</a>
+            </p>
+            <p>
+                In order to stay on theme with my intended policy direction, I wanted to continue looking at gambling markets in the UK. I compared Scotland, Wales and Northern Ireland, which have their own governments, with London and two English regions, to see whether the number of gambling sites moved the same way. In all six regions there were fewer sites in 2026 than in 2010. However, these figures count sites, not betting activity, and prediction markets are online, so the dashboard cannot speak to them directly. I also have not tested whether any change is linked to devolution itself.
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>
