@@ -1,25 +1,34 @@
+/* This is the stylesheet for my portfolio site. It is built from the class example, with extra styles added at the bottom. */
+/* Comments in CSS don't do anything, they just explain what the code is for. */
+
+/* The font. This loads Inter from Google Fonts. If it fails, the browser uses the next font in the list below. */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
-:root {
-  --ink: #1c1c1c;
-  --muted: #777777;
-  --line: #e6e1e3;
-  --pink: #a3174f;
-  --bg: #fcfbfb;
-}
 
-body {
-  font-family: 'Inter', Arial, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
+body { /* We can style any HTML element by using its name - here we're styling the body */
+  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #1c1c1c;
   line-height: 1.7;
-  max-width: 960px;
+  /* we want a soft off-white page, that's centered and not too wide */
+  background-color: #fcfbfb;
   margin: 0 auto;
+  max-width: 960px;
   padding: 0 24px 80px;
 }
 
-/* ---------- Text ---------- */
-h1, h1.big {
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #1c1c1c;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* We want the main heading to be big and light, not bold */
+.big { /* This is the class from the HTML file, you can use it to style any element */
   font-size: 2.6rem;
   font-weight: 300;
   letter-spacing: -0.02em;
@@ -28,71 +37,156 @@ h1, h1.big {
 
 h2 {
   font-size: 1.3rem;
-  font-weight: 600;
   margin: 0 0 14px;
 }
+
+/* A short dark pink line under each h2 heading */
 h2::after {
   content: "";
   display: block;
   width: 36px;
   height: 3px;
-  background: var(--pink);
+  background-color: #a3174f;
   margin-top: 8px;
 }
 
-h3 { font-size: 1.05rem; font-weight: 600; margin: 28px 0 8px; }
+h3 {
+  font-size: 1.05rem;
+  margin: 28px 0 8px;
+}
 
-h3.small {
-  font-weight: 300;
+/* The small grey line under my name that introduces the page */
+.small {
   font-size: 1.1rem;
-  color: var(--muted);
+  font-weight: 300;
+  color: #777777;
   max-width: 62ch;
 }
 
-.byline { color: var(--muted); margin: 0 0 12px; }
+/* The grey line with my name and LinkedIn link */
+.byline {
+  color: #777777;
+  margin: 0 0 12px;
+}
 
-p { margin: 0 0 14px; max-width: 72ch; }
 
-a { color: var(--pink); text-underline-offset: 3px; }
-a:hover { color: var(--ink); }
+/* Paragraph */
+p {
+  margin: 0 0 14px;
+  max-width: 72ch; /* stops lines of text getting too long to read */
+}
 
-code { background: #f3eef0; padding: 2px 5px; font-size: 0.88rem; word-break: break-all; }
+section {
+  border-top: 1px solid #e6e1e3; /* a thin grey line between sections */
+  padding: 40px 0 16px;          /* more space between sections */
+}
 
-/* ---------- Navigation ---------- */
-.site-nav { display: flex; flex-wrap: wrap; gap: 24px; padding: 28px 0 0; }
+hr {
+  display: none; /* the section lines already separate things, so we hide the hr lines */
+}
+
+
+/* Links */
+/* We want the links to be dark pink, and to turn black when you hover over them */
+a {
+  color: #a3174f;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #1c1c1c;
+}
+
+/* Small bits of code, like the full API url */
+code {
+  background-color: #f3eef0;
+  padding: 2px 5px;
+  font-size: 0.88rem;
+  word-break: break-all;
+}
+
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* EXTRA STYLES I ADDED FOR MY SITE (not in the class example)       */
+/* ---------------------------------------------------------------- */
+
+/* Navigation bar at the top of every page */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 28px 0 0;
+}
+
 .site-nav a {
-  color: var(--ink);
+  color: #1c1c1c;
   text-decoration: none;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.site-nav a:hover { color: var(--pink); }
-.site-nav a.active { color: var(--pink); border-bottom: 2px solid var(--pink); }
 
-/* ---------- Sections ---------- */
-section { border-top: 1px solid var(--line); padding: 40px 0 16px; }
-hr { display: none; }
+.site-nav a:hover {
+  color: #a3174f;
+}
 
-.chart-row { display: flex; flex-wrap: wrap; gap: 24px; }
-figure { margin: 0 0 16px; max-width: 100%; overflow-x: auto; }
-img { max-width: 100%; }
+/* The link for the page you are on is dark pink with a line under it */
+.site-nav a.active {
+  color: #a3174f;
+  border-bottom: 2px solid #a3174f;
+}
 
-/* ---------- Buttons ---------- */
+
+/* Charts */
+.chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+figure {
+  margin: 0 0 16px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+
+/* Buttons on the home page */
 .button {
   display: inline-block;
   padding: 10px 22px;
-  background: var(--pink);
+  background-color: #a3174f;
   color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
   margin: 6px 8px 6px 0;
 }
-.button:hover { background: var(--ink); color: #fff; }
-.button.secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
-.button.secondary:hover { background: var(--ink); color: #fff; }
 
-/* ---------- Dashboard ---------- */
+.button:hover {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.button.secondary {
+  background-color: transparent;
+  color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+}
+
+.button.secondary:hover {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+
+/* Devolution dashboard: six charts in a grid, three across */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,26 +195,68 @@ img { max-width: 100%; }
   overflow-x: auto;
 }
 
-/* ---------- Home page ---------- */
-.hero { display: flex; align-items: center; gap: 40px; padding: 40px 0; }
-.hero p { color: var(--muted); font-size: 1.05rem; }
 
+/* Home page: photo and introduction side by side */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.hero p {
+  color: #777777;
+  font-size: 1.05rem;
+}
+
+/* The photo sits in a round frame with a thin dark pink ring */
 .headshot {
   width: 200px;
   height: 200px;
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 0 2px var(--pink);
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #a3174f;
 }
+
+/* The photo is zoomed in so my face fills the circle, and its top edge fades out softly */
 .headshot img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 20%;
+  transform-origin: 50% 0;
+  transform: translateY(7%) scale(1.5);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 6%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 6%);
 }
 
-.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.card { border-top: 1px solid var(--line); padding-top: 20px; }
-.card h3 { margin-top:
+
+/* Home page: three cards linking to my pages */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  border-top: 1px solid #e6e1e3;
+  padding-top: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+
+/* Small screens: tablets and phones */
+@media (max-width: 800px) {
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .big { font-size: 2rem; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; text-align: center; }
+}
