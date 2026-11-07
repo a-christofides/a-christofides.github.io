@@ -1,74 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="Example2.css">
+    <!-- Researched: charset utf-8 makes special characters, like the ï in Annaïs, display correctly -->
+    <meta charset="utf-8">
+    <!-- Researched: viewport makes the page fit a phone screen, so my mobile layout rules work -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>UK Devolution Dashboard</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
-
-    <style>
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-    </style>
 </head>
 
 <body>
-    <h1 class="big" style="margin-bottom: 0px;">UK Devolution Dashboard</h1>
-    <p style="margin-top: 0px; color: darkblue">Annaïs Christofides | <a href="Example2.html">Back to my portfolio</a></p>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pp434-class-exercises.html">PP434: Class Exercises</a>
+        <a href="DevolutionDashboard.html" class="active">Devolution Dashboard</a>
+        <a href="Annais_Christofides_Resume_2026_LDN.pdf" target="_blank">Resume</a>
+    </nav>
+
+    <h1 class="big">UK Devolution Dashboard</h1>
+    <p class="byline">Annaïs Christofides | <a href="https://www.linkedin.com/in/annaïs">LinkedIn</a></p>
 
     <h3 class="small">
         Gambling and betting sites across six UK regions, 2010 to 2026
     </h3>
 
     <p>
-        Scotland, Wales and Northern Ireland have their own devolved governments, and London has its own mayor and assembly. Each chart shows how many sites in the gambling and betting industry operated in that region each year. Note that each chart has its own scale, because the regions differ a lot in size.
+        Scotland, Wales and Northern Ireland each have their own devolved government, and London has its own mayor and assembly. The charts below show how many gambling and betting sites were operating in each of these regions every year from 2010 to 2026.
+        Each chart has its own scale, since the regions differ a lot in size, so the lines are best read for their direction and not compared by height. More research would be needed to link the fall in gambling sites to devolution, if there is any link at all.
     </p>
 
-    <!-- The six charts are placed in this grid by the loop below -->
-    <div id="dashboard" class="dashboard-grid"></div>
+    <!-- Six empty spaces, one for each chart. The loop below fills them in. -->
+    <div class="dashboard-grid">
+        <div id="chart0"></div>
+        <div id="chart1"></div>
+        <div id="chart2"></div>
+        <div id="chart3"></div>
+        <div id="chart4"></div>
+        <div id="chart5"></div>
+    </div>
 
     <script>
-        // Address of the folder on GitHub that holds the six raw JSON files (must end with a slash)
-        const rawBase = "https://raw.githubusercontent.com/a-christofides/a-christofides.github.io/refs/heads/main";
+        // The folder on GitHub that holds my six JSON files (it must end with a slash)
+        const rawBase = "https://raw.githubusercontent.com/a-christofides/a-christofides.github.io/refs/heads/main/";
 
-        const regions = ["Scotland", "Wales", "Northern Ireland", "London", "North West", "North East"];
-        const grid = document.getElementById("dashboard");
+        // Two lists, in the same order: the chart titles and the file names
+        const titles = ["Scotland", "Wales", "Northern Ireland", "London", "North West", "North East"];
+        const files = [
+            "gambling_v2_scotland.json",
+            "gambling_v2_wales.json",
+            "gambling_v2_northern_ireland.json",
+            "gambling_v2_london.json",
+            "gambling_v2_north_west.json",
+            "gambling_v2_north_east.json"
+        ];
 
-        // One loop, and the embed function is written once inside it
-        for (const region of regions) {
-            const box = document.createElement("div");
-            grid.appendChild(box);
+        // The loop. This is the same idea as "for i in range(6)" in Python.
+        // i starts at 0, the loop repeats while i is less than 6, and i++ adds 1 each time.
+        for (let i = 0; i < 6; i++) {
 
-            const file = "gambling_v2_" + region.toLowerCase().replaceAll(" ", "_") + ".json";
-
+            // The chart. titles[i] and files[i] pick the i-th item from each list.
             const spec = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                "width": 280,
+                "width": 220,
                 "height": 200,
-                "title": region,
-                "data": { "url": rawBase + file },
-                "mark": { "type": "line", "point": true, "color": "#c2185b", "strokeWidth": 2.5 },
+                "title": titles[i],
+                "data": { "url": rawBase + files[i] },
+                "mark": { "type": "line", "color": "#a3174f" },
                 "encoding": {
                     "x": { "field": "year", "type": "quantitative", "title": "Year", "axis": { "format": "d" } },
-                    "y": { "field": "sites", "type": "quantitative", "title": "Gambling sites" },
-                    "tooltip": [
-                        { "field": "year", "type": "quantitative", "title": "Year", "format": "d" },
-                        { "field": "sites", "type": "quantitative", "title": "Sites" }
-                    ]
+                    "y": { "field": "sites", "type": "quantitative", "title": "Gambling sites" }
                 }
             };
 
-            vegaEmbed(box, spec);
+            // Draw the chart in space number i ("#chart0", then "#chart1", and so on)
+            vegaEmbed("#chart" + i, spec);
         }
     </script>
 
-    <p><a href="https://colab.research.google.com/drive/1FfonzEKn2G2QdAfhthf683Ei33LqtaSG?usp=sharing" target="_blank">Open the Google Colab notebook</a></p>
+    <p><a href="https://colab.research.google.com/drive/1LIDU_E1gStlbJMvmPPF3xpSx05yv6zQj?usp=sharing" target="_blank">Open the Google Colab notebook</a></p>
 
     <p>
         Source: Office for National Statistics, UK Business Counts (local units), SIC 92000 Gambling and betting activities, accessed via Nomis, March of each year. These count sites, not betting activity or spending.
@@ -76,7 +91,3 @@
 </body>
 
 </html>
-
-
-
-
