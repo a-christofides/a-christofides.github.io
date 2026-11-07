@@ -1,0 +1,125 @@
+region_key,bookmaker,type,region_name
+us,BetOnline.ag,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,BetMGM,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,BetRivers,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,BetUS,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,Bovada,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,Caesars,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,DraftKings,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,Fanatics,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,FanDuel,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,LowVig.ag,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us,MyBookie.ag,Sportsbook,"US sportsbooks 1 (DraftKins, FanDuel)"
+us2,Bally Bet,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,BetAnything,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,betPARX,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,Courtside,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,theScore Bet,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,Fliff,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,Hard Rock Bet,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,Hard Rock Bet (AZ),Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,Hard Rock Bet (FL),Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,Hard Rock Bet (OH),Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us2,ReBet,Sportsbook,"US sportsbooks 2 (Bally Bet, Hard Rock)"
+us_dfs,Dabble,DFS site,"US fantasy sites (PrizePicks, Underdog)"
+us_dfs,DraftKings Pick6,DFS site,"US fantasy sites (PrizePicks, Underdog)"
+us_dfs,PrizePicks,DFS site,"US fantasy sites (PrizePicks, Underdog)"
+us_dfs,Underdog Fantasy,DFS site,"US fantasy sites (PrizePicks, Underdog)"
+us_ex,BetOpenly,Exchange,"US exchanges (Kalshi, Polymarket)"
+us_ex,Kalshi,Exchange,"US exchanges (Kalshi, Polymarket)"
+us_ex,Limitless Exchange,Exchange,"US exchanges (Kalshi, Polymarket)"
+us_ex,Novig,Exchange,"US exchanges (Kalshi, Polymarket)"
+us_ex,Polymarket,Exchange,"US exchanges (Kalshi, Polymarket)"
+us_ex,Polymarket (US),Exchange,"US exchanges (Kalshi, Polymarket)"
+us_ex,ProphetX,Exchange,"US exchanges (Kalshi, Polymarket)"
+uk,888sport,Sportsbook,UK
+uk,Betano (UK),Sportsbook,UK
+uk,Betfair Exchange,Sportsbook,UK
+uk,Betfair Sportsbook,Sportsbook,UK
+uk,Betfred (UK),Sportsbook,UK
+uk,Bet Victor,Sportsbook,UK
+uk,Betway,Sportsbook,UK
+uk,BoyleSports,Sportsbook,UK
+uk,Casumo,Sportsbook,UK
+uk,Coral,Sportsbook,UK
+uk,Grosvenor,Sportsbook,UK
+uk,Ladbrokes,Sportsbook,UK
+uk,LeoVegas,Sportsbook,UK
+uk,LiveScore Bet,Sportsbook,UK
+uk,Matchbook,Sportsbook,UK
+uk,Paddy Power,Sportsbook,UK
+uk,Sky Bet,Sportsbook,UK
+uk,Smarkets,Sportsbook,UK
+uk,Unibet,Sportsbook,UK
+uk,Virgin Bet,Sportsbook,UK
+uk,William Hill (UK),Sportsbook,UK
+eu,1xBet,Sportsbook,EU
+eu,888sport,Sportsbook,EU
+eu,Betclic (FR),Sportsbook,EU
+eu,BetAnySports,Sportsbook,EU
+eu,Betfair Exchange,Sportsbook,EU
+eu,BetOnline.ag,Sportsbook,EU
+eu,Betsson,Sportsbook,EU
+eu,Codere (IT),Sportsbook,EU
+eu,Bet Victor,Sportsbook,EU
+eu,Coolbet,Sportsbook,EU
+eu,Everygame,Sportsbook,EU
+eu,GTbets,Sportsbook,EU
+eu,LeoVegas (SE),Sportsbook,EU
+eu,Marathon Bet,Sportsbook,EU
+eu,Matchbook,Sportsbook,EU
+eu,MyBookie.ag,Sportsbook,EU
+eu,NordicBet,Sportsbook,EU
+eu,Pinnacle,Sportsbook,EU
+eu,PMU (FR),Sportsbook,EU
+eu,Tipico (DE),Sportsbook,EU
+eu,Unibet (FR),Sportsbook,EU
+eu,Unibet (IT),Sportsbook,EU
+eu,Unibet (NL),Sportsbook,EU
+eu,Unibet (SE),Sportsbook,EU
+eu,William Hill,Sportsbook,EU
+eu,Winamax (DE),Sportsbook,EU
+eu,Winamax (FR),Sportsbook,EU
+au,Betfair Exchange,Sportsbook,AU
+au,Betr,Sportsbook,AU
+au,Bet Right,Sportsbook,AU
+au,Bet365 AU,Sportsbook,AU
+au,Dabble AU,Sportsbook,AU
+au,Ladbrokes,Sportsbook,AU
+au,Neds,Sportsbook,AU
+au,Picklebet (AU),Sportsbook,AU
+au,PlayUp,Sportsbook,AU
+au,PointsBet (AU),Sportsbook,AU
+au,SportsBet,Sportsbook,AU
+au,TAB,Sportsbook,AU
+au,TABtouch,Sportsbook,AU
+au,Unibet,Sportsbook,AU
+ca,BET99 (CA - ON),Sportsbook,CA
+ca,Betano (CA - ON),Sportsbook,CA
+ca,BetMGM (CA - ON),Sportsbook,CA
+ca,BetRivers (CA - ON),Sportsbook,CA
+ca,PlayNow (CA),Sportsbook,CA
+ca,PointsBet (CA - ON),Sportsbook,CA
+ca,PROLINE (CA - ON),Sportsbook,CA
+ca,Sports Interaction (CA - ON),Sportsbook,CA
+fr,Betclic (FR),Sportsbook,FR
+fr,NetBet (FR),Sportsbook,FR
+fr,PMU (FR),Sportsbook,FR
+fr,Unibet (FR),Sportsbook,FR
+fr,Winamax (FR),Sportsbook,FR
+se,ATG (SE),Sportsbook,SE
+se,Betinia (SE),Sportsbook,SE
+se,BetMGM (SE),Sportsbook,SE
+se,Betsson,Sportsbook,SE
+se,CampoBet (SE),Sportsbook,SE
+se,Nya Expekt (SE),Sportsbook,SE
+se,Hajper (SE),Sportsbook,SE
+se,LeoVegas (SE),Sportsbook,SE
+se,Mr Green (SE),Sportsbook,SE
+se,NordicBet,Sportsbook,SE
+se,888sport (SE),Sportsbook,SE
+se,Svenska Spel,Sportsbook,SE
+se,Unibet (SE),Sportsbook,SE
+fi,LeoVegas (FI),Sportsbook,FI
+fi,Unibet (FI),Sportsbook,FI
+fi,Veikkaus (FI),Sportsbook,FI
