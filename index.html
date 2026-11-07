@@ -1,34 +1,53 @@
 <!DOCTYPE html>
-<html>
-
-<!-- Annaïs Christofides, MPA in Data Science for Public Policy -->
-
-<!-- CODING LESSON NUMBER 1 -->
-<!-- Commenting your code is vital, vital, vital -->
-
-<!-- This is how you add comments to HTML -->
-
-<!-- You can also include
-multi - line comments
-if you find that useful -->
-
-<!-- To turn text into a comment, use the=is short-cut: CTRL & the "/" key (command + "/" on Mac)-->
-
-
-<!-- HOW HTML WORKS - THE BASICS -->
-<!-- HTML files have two fundamental parts. (1) The head, (2) The body -->
-
-<!-- The head contains things that you do not see on the page -->
+<html lang="en">
 
 <head>
-    <title>Page Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Annaïs Christofides</title>
 </head>
 
-<!-- The body contains thigs you see -->
-<!-- Most elements both open and close, with the content in the middle -->
-<!-- Indenting is optional, but helps with readability -->
 <body>
-    <h1>Annaïs Christofides</h1>
-    <p>MPA in Data Science for Public Policy</p>
+    <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pp434-class-exercises.html">PP434: Class Exercises</a>
+        <a href="DevolutionDashboard.html">Devolution Dashboard</a>
+        <a href="Annais_Christofides_Resume_2026_LDN.pdf" target="_blank">Resume</a>
+    </nav>
+
+    <div class="hero">
+        <div class="headshot">
+            <img src="headshot.jpeg" alt="Photo of Annaïs Christofides">
+        </div>
+        <div>
+            <h1 class="big">Annaïs Christofides</h1>
+            <p>
+                I am a second year MPA DSPP student with a passion for combining the social sciences with quantitative reasoning.
+            </p>
+            <a class="button" href="Annais_Christofides_Resume_2026_LDN.pdf" target="_blank">View my resume</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/annaïs">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Portfolio</h3>
+            <p>My policy and data work.</p>
+            <a href="portfolio.html">Open the portfolio</a>
+        </div>
+        <div class="card">
+            <h3>PP434: Class Exercises</h3>
+            <p>Charts from my data visualization course, one for each coding challenge.</p>
+            <a href="pp434-class-exercises.html">See the exercises</a>
+        </div>
+        <div class="card">
+            <h3>Devolution Dashboard</h3>
+            <p>Six charts on gambling and betting sites across UK regions.</p>
+            <a href="DevolutionDashboard.html">Open the dashboard</a>
+        </div>
+    </div>
 </body>
+
 </html>
